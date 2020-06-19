@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">{name}点击了{time}次</div>
+    <button id="button">点击</button>
+    <button id="button2">改名</button>
+    <script type="module">
+        import View from "./index.js"
+        const data = {
+            time: 0,
+            name: "wj"
+        }
+        const v = new View({
+            el: "app",
+            data
+        })
+        button.addEventListener("click", () => {
+            v.data.time ++
+            v.data.time ++
+        })
+        button2.addEventListener("click", () => {
+            v.data.name = "wj2"
+        })
+    </script>
+</body>
+</html>
