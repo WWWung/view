@@ -1,3 +1,4 @@
+//  用来收集依赖
 import { Watcher } from "./watcher"
 
 let target:Watcher = null
@@ -14,6 +15,7 @@ export class Dep {
 
     }
     depend() {
+        //  target存在的时候才收集，避免重复收集
         target && target.addDep(this)
     }
     //  通知更新

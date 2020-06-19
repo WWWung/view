@@ -4,7 +4,9 @@ import {
 } from "./nexttick"
 import View from ".";
 let uid = 0
-
+/**
+ * 监听
+ */
 export class Watcher {
     render:(data:any)=>string
     data: any
@@ -19,6 +21,7 @@ export class Watcher {
     }
     init() {
         setTarget(this)
+        //  调用run的时候会对 数据 取值操作，就会触发get收集到依赖
         this.run()
         setTarget(null)
     }
@@ -26,6 +29,7 @@ export class Watcher {
         dep.addSub(this)
     }
     
+    //  update的时候把watcher入栈，等待下次更新
     update() {
         addWatcher(this)
     }
