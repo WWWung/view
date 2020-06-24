@@ -1,10 +1,14 @@
 //  将模板字符串编译成渲染函数
 
+import { parse } from "./parser/parser"
+
 export function compileHtmlToFunction(template:string):(data:object|Array<any>) => string {
     // const exp = 
     const queue = []
     let matched = false
     let matchedStr = ""
+    const ast = parse(template)
+    console.log(ast)
     for (let i = 0; i < template.length; i++) {
         const current = template.charAt(i)
         //  普通字符串直接返回，模板字符串作为函数处理

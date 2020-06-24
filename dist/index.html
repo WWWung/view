@@ -6,14 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">{name}点击了{time}次</div>
+    <div id="app">
+        <div v-for="item in items">
+            <span v-if="success"></span>
+            <p v-if="success"></p>
+        </div>
+    </div>
     <button id="button">点击</button>
     <button id="button2">改名</button>
     <script type="module">
         import View from "./index.js"
         const data = {
             time: 0,
-            name: "wj"
+            name: "wj",
+            arr: ["abc"]
         }
         const v = new View({
             el: "app",

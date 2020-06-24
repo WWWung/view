@@ -34,7 +34,7 @@ export default class View {
     }
     //  更新dom(vue里的实现这里会通过diff算法比较新旧vnode，我看不懂)
     _update(value:string) {
-        this.el.innerHTML = value
+        // this.el.innerHTML = value
     }
 
 
